@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operação Estrela | Mentoria Oficial PMDF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --dark-navy: #000015;
@@ -134,11 +135,18 @@
         .faq-question { font-weight: bold; color: var(--gold-bright); font-size: 1.1em; display: block; margin-bottom: 5px; }
         .faq-answer { color: #ccc; font-size: 0.95em; }
 
+        /* WHATSAPP FLUTUANTE COM ÍCONE */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
             background-color: var(--whatsapp-color); color: #FFF; border-radius: 50px;
-            text-align: center; font-size: 24px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100;
-            display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;
+            text-align: center; font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100;
+            display: flex; align-items: center; justify-content: center; text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
         }
 
         footer { text-align: center; padding: 50px; background: #000; color: #444; }
@@ -147,12 +155,15 @@
             header h1 { font-size: 2em; }
             .card { width: 100%; margin-bottom: 30px; }
             .card.featured { transform: scale(1); }
+            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/5561999999999" class="whatsapp-float" target="_blank">WP</a>
+<a href="https://wa.me/5561999999999" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <header>
     <div class="container">
