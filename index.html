@@ -11,6 +11,7 @@
             --gold-dark: #B8860B;
             --white: #ffffff;
             --gray-bg: #0a0a0a;
+            --whatsapp-color: #25d366;
         }
 
         * { box-sizing: border-box; }
@@ -52,7 +53,6 @@
 
         header p { font-size: 1.3em; color: var(--gold-bright); font-weight: bold; margin-bottom: 30px; }
 
-        /* VÍDEO PRINCIPAL - CORREÇÃO DE CORTE */
         .main-video-container { 
             background: #000; 
             width: 100%; 
@@ -60,12 +60,12 @@
             margin: 30px auto; 
             border: 2px solid var(--gold-dark);
             box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
-            line-height: 0; /* Remove espaços fantasmas abaixo do vídeo */
+            line-height: 0;
         }
 
         video { 
             width: 100%; 
-            height: auto; /* Ajusta a altura proporcionalmente ao arquivo real */
+            height: auto; 
             display: block; 
         }
 
@@ -82,11 +82,12 @@
             text-transform: uppercase;
             transition: 0.3s;
             border: none;
+            cursor: pointer;
+            text-align: center;
         }
 
         .cta-gold:hover { transform: translateY(-3px); box-shadow: 0 0 30px var(--gold-bright); }
 
-        /* RESULTADOS COM EXTENSÃO .JPEG */
         .resultados { background: var(--gray-bg); padding: 80px 20px; text-align: center; }
         .grid-resultados { 
             display: grid; 
@@ -103,7 +104,6 @@
             display: block;
         }
 
-        /* PREÇOS */
         .pricing-section { padding: 80px 20px; background: var(--white); color: #333; }
         .pricing-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
         
@@ -128,6 +128,19 @@
         li { padding: 8px 0; border-bottom: 1px dotted #ccc; }
         li::before { content: "✔ "; color: var(--gold-dark); font-weight: bold; }
 
+        .faq-section { padding: 80px 20px; background: var(--dark-navy); color: var(--white); }
+        .faq-container { max-width: 800px; margin: auto; text-align: left; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid rgba(184, 134, 11, 0.3); padding-bottom: 10px; }
+        .faq-question { font-weight: bold; color: var(--gold-bright); font-size: 1.1em; display: block; margin-bottom: 5px; }
+        .faq-answer { color: #ccc; font-size: 0.95em; }
+
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: var(--whatsapp-color); color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 24px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;
+        }
+
         footer { text-align: center; padding: 50px; background: #000; color: #444; }
 
         @media (max-width: 768px) {
@@ -138,6 +151,8 @@
     </style>
 </head>
 <body>
+
+<a href="https://wa.me/5561999999999" class="whatsapp-float" target="_blank">WP</a>
 
 <header>
     <div class="container">
@@ -179,9 +194,9 @@
                     <li>Cronograma Base</li>
                     <li>Missões diárias de estudo</li>
                     <li>Guia Operação Estrela (PDF Revisão Esquematizada)</li>
-                    <li> 01 Consultoria Individualizada</li>
+                    <li>01 Consultoria Individualizada</li>
                 </ul>
-                <a href="#" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER ASPIRANTE</a>
+                <a href="https://pag.ae/81kU9vx2N" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER ASPIRANTE</a>
             </div>
 
             <div class="card featured">
@@ -194,7 +209,7 @@
                     <li>03 Redações Corrigidas</li>
                     <li>Grupo VIP WhatsApp</li>
                 </ul>
-                <a href="#" class="cta-gold" style="font-size: 1.1em; padding: 12px;">VOU SER TENENTE</a>
+                <a href="https://pag.ae/81kUaokX7" target="_blank" class="cta-gold" style="font-size: 1.1em; padding: 12px;">VOU SER TENENTE</a>
             </div>
 
             <div class="card">
@@ -205,9 +220,27 @@
                     <li>Calls Quinzenais</li>
                     <li>Código Estrela (Lei Seca com Jurisprudência)</li>
                 </ul>
-                <a href="#" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER COMANDANTE</a>
+                <a href="https://pag.ae/81kUc4Hjt" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER COMANDANTE</a>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container faq-container">
+        <h2 style="text-align: center; color: var(--gold-bright); margin-bottom: 40px;">PERGUNTAS FREQUENTES</h2>
+        <div class="faq-item">
+            <span class="faq-question">Como recebo o acesso?</span>
+            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com as instruções para iniciar sua Operação Estrela.</p>
+        </div>
+        <div class="faq-item">
+            <span class="faq-question">As consultorias são em grupo?</span>
+            <p class="faq-answer">Não. As consultorias dos planos Aspirante e Tenente são individuais para tratar da SUA evolução.</p>
+        </div>
+        <div class="faq-item">
+            <span class="faq-question">Tenho garantia?</span>
+            <p class="faq-answer">Sim, você tem 7 dias de garantia incondicional para testar a metodologia.</p>
         </div>
     </div>
 </section>
@@ -217,6 +250,4 @@
 </footer>
 
 </body>
-
 </html>
-
