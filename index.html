@@ -12,7 +12,7 @@
             --gold-dark: #B8860B;
             --white: #ffffff;
             --gray-bg: #0a0a0a;
-            --whatsapp-color: #25d366;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
         * { box-sizing: border-box; }
@@ -64,11 +64,7 @@
             line-height: 0;
         }
 
-        video { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-        }
+        video { width: 100%; height: auto; display: block; }
 
         .cta-gold { 
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-dark));
@@ -135,19 +131,16 @@
         .faq-question { font-weight: bold; color: var(--gold-bright); font-size: 1.1em; display: block; margin-bottom: 5px; }
         .faq-answer { color: #ccc; font-size: 0.95em; }
 
-        /* WHATSAPP FLUTUANTE COM ÍCONE */
-        .whatsapp-float {
+        /* INSTAGRAM FLUTUANTE */
+        .insta-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
-            background-color: var(--whatsapp-color); color: #FFF; border-radius: 50px;
+            background: var(--insta-gradient); color: #FFF; border-radius: 50px;
             text-align: center; font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 100;
             display: flex; align-items: center; justify-content: center; text-decoration: none;
             transition: 0.3s;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-        }
+        .insta-float:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(220, 39, 67, 0.6); }
 
         footer { text-align: center; padding: 50px; background: #000; color: #444; }
 
@@ -155,14 +148,14 @@
             header h1 { font-size: 2em; }
             .card { width: 100%; margin-bottom: 30px; }
             .card.featured { transform: scale(1); }
-            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 30px; }
+            .insta-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/5561999999999" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://www.instagram.com/lucasdavidb?igsh=cXJveTZmMmJuaHFr&utm_source=qr" class="insta-float" target="_blank">
+    <i class="fab fa-instagram"></i>
 </a>
 
 <header>
@@ -204,6 +197,7 @@
                 <ul>
                     <li>Cronograma Base</li>
                     <li>Missões diárias de estudo</li>
+                    <li><strong>Flashcards</strong></li>
                     <li>Guia Operação Estrela (PDF Revisão Esquematizada)</li>
                     <li>01 Consultoria Individualizada</li>
                 </ul>
@@ -262,4 +256,3 @@
 
 </body>
 </html>
-
