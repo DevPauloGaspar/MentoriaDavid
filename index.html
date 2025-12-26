@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operação Estrela | Mentoria Oficial PMDF</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --dark-navy: #000015;
+            --deep-blue: #000a2d;
             --gold-bright: #FFD700;
             --gold-dark: #B8860B;
             --white: #ffffff;
@@ -18,7 +20,7 @@
         * { box-sizing: border-box; }
 
         body { 
-            font-family: 'Montserrat', sans-serif, Arial; 
+            font-family: 'Montserrat', sans-serif; 
             margin: 0; 
             color: var(--white); 
             line-height: 1.6; 
@@ -28,63 +30,96 @@
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
 
+        /* --- HERO SECTION ATUALIZADA --- */
         header { 
-            background: linear-gradient(180deg, var(--dark-navy) 0%, #000033 100%);
-            padding: 60px 20px; 
+            position: relative;
+            background: radial-gradient(circle at top, var(--deep-blue) 0%, var(--dark-navy) 100%);
+            padding: 80px 20px; 
             text-align: center;
-            border-bottom: 3px solid var(--gold-dark);
+            overflow: hidden;
+            border-bottom: 2px solid var(--gold-dark);
+        }
+
+        /* Textura Abstrata de Fundo */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(184, 134, 11, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; /* Leve textura de pontos/grade */
+            pointer-events: none;
+        }
+
+        header .mentoria-nome {
+            color: var(--gold-bright);
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         header h1 { 
-            font-size: 3em; 
-            margin-bottom: 10px; 
+            font-size: clamp(2em, 5vw, 3.5em); 
+            margin-bottom: 20px; 
             text-transform: uppercase; 
-            letter-spacing: 4px; 
+            font-weight: 900;
+            line-height: 1.1;
             color: var(--white);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        .mentoria-nome {
-            color: var(--gold-bright);
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
-            font-weight: bold;
+        header h1 span { color: var(--gold-bright); }
+
+        header p { 
+            font-size: 1.2em; 
+            color: #bdc3c7; 
+            max-width: 700px; 
+            margin: 0 auto 40px;
         }
 
-        header p { font-size: 1.3em; color: var(--gold-bright); font-weight: bold; margin-bottom: 30px; }
-
+        /* Vídeo Central em Destaque */
         .main-video-container { 
+            position: relative;
             background: #000; 
             width: 100%; 
-            max-width: 800px;
-            margin: 30px auto; 
-            border: 2px solid var(--gold-dark);
-            box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
+            max-width: 850px;
+            margin: 0 auto; 
+            border: 3px solid var(--gold-dark);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.2);
+            border-radius: 8px;
+            z-index: 2;
             line-height: 0;
+            overflow: hidden;
         }
 
         video { width: 100%; height: auto; display: block; }
 
+        /* --- BOTÃO CTA --- */
         .cta-gold { 
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-dark));
             color: #000 !important; 
-            padding: 20px 45px; 
+            padding: 22px 50px; 
             text-decoration: none; 
-            font-size: 1.3em; 
-            border-radius: 4px; 
+            font-size: 1.4em; 
+            border-radius: 5px; 
             font-weight: 900; 
             display: inline-block; 
-            margin-top: 20px; 
+            margin-top: 50px; 
             text-transform: uppercase;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .cta-gold:hover { transform: translateY(-3px); box-shadow: 0 0 30px var(--gold-bright); }
+        .cta-gold:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4); 
+        }
 
+        /* --- RESTANTE DAS SEÇÕES --- */
         .resultados { background: var(--gray-bg); padding: 80px 20px; text-align: center; }
         .grid-resultados { 
             display: grid; 
@@ -98,7 +133,6 @@
             height: auto; 
             border-radius: 8px; 
             border: 2px solid var(--gold-dark);
-            display: block;
         }
 
         .pricing-section { padding: 80px 20px; background: var(--white); color: #333; }
@@ -122,16 +156,14 @@
 
         .price { font-size: 3em; font-weight: 900; margin: 20px 0; color: #000; }
         ul { text-align: left; padding: 0; list-style: none; margin-bottom: 30px; flex-grow: 1; }
-        li { padding: 8px 0; border-bottom: 1px dotted #ccc; }
+        li { padding: 8px 0; border-bottom: 1px dotted #ccc; font-size: 0.95em; }
         li::before { content: "✔ "; color: var(--gold-dark); font-weight: bold; }
 
         .faq-section { padding: 80px 20px; background: var(--dark-navy); color: var(--white); }
-        .faq-container { max-width: 800px; margin: auto; text-align: left; }
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid rgba(184, 134, 11, 0.3); padding-bottom: 10px; }
+        .faq-container { max-width: 800px; margin: auto; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid rgba(184, 134, 11, 0.3); padding-bottom: 15px; }
         .faq-question { font-weight: bold; color: var(--gold-bright); font-size: 1.1em; display: block; margin-bottom: 5px; }
-        .faq-answer { color: #ccc; font-size: 0.95em; }
 
-        /* INSTAGRAM FLUTUANTE */
         .insta-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
             background: var(--insta-gradient); color: #FFF; border-radius: 50px;
@@ -140,12 +172,10 @@
             transition: 0.3s;
         }
 
-        .insta-float:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(220, 39, 67, 0.6); }
-
-        footer { text-align: center; padding: 50px; background: #000; color: #444; }
+        footer { text-align: center; padding: 50px; background: #000; color: #555; font-size: 0.9em; }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
+            header h1 { font-size: 2.2em; }
             .card { width: 100%; margin-bottom: 30px; }
             .card.featured { transform: scale(1); }
             .insta-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 30px; }
@@ -160,24 +190,24 @@
 
 <header>
     <div class="container">
-        <span class="mentoria-nome">OPERAÇÃO ESTRELA</span>
-        <h1>O Melhor Caminho para a PMDF</h1>
-        <p>Mentoria Individual para Oficial</p>
+        <span class="mentoria-nome">Operação Estrela</span>
+        <h1>O Único Caminho para ser <span>Oficial da PMDF</span></h1>
+        <p>A estratégia validada para quem deseja a aprovação no concurso mais concorrido do DF, com acompanhamento individualizado.</p>
         
         <div class="main-video-container">
-            <video controls>
+            <video controls poster="thumb-video.jpg">
                 <source src="video-vendas.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
         </div>
 
-        <a href="#precos" class="cta-gold">INICIAR OPERAÇÃO</a>
+        <a href="#precos" class="cta-gold">Quero Iniciar Minha Operação</a>
     </div>
 </header>
 
 <section class="resultados">
     <div class="container">
-        <h2 style="color: var(--gold-bright); text-transform: uppercase;">Resultados Reais</h2>
+        <h2 style="color: var(--gold-bright); text-transform: uppercase; font-weight: 900; letter-spacing: 2px;">Resultados de Quem Confiou</h2>
         <div class="grid-resultados">
             <img src="resultado1.jpeg" alt="Aprovação 1" class="img-resultado">
             <img src="resultado2.jpeg" alt="Aprovação 2" class="img-resultado">
@@ -188,7 +218,7 @@
 
 <section id="precos" class="pricing-section">
     <div class="container">
-        <h2 style="text-align: center; color: var(--dark-navy); margin-bottom: 50px;">INVESTIMENTO</h2>
+        <h2 style="text-align: center; color: var(--dark-navy); margin-bottom: 50px; font-weight: 900; text-transform: uppercase;">Escolha Sua Patente</h2>
         <div class="pricing-grid">
             
             <div class="card">
@@ -198,10 +228,10 @@
                     <li>Cronograma Base</li>
                     <li>Missões diárias de estudo</li>
                     <li><strong>Flashcards</strong></li>
-                    <li>Guia Operação Estrela (PDF Revisão Esquematizada)</li>
+                    <li>Guia Operação Estrela (PDF)</li>
                     <li>01 Consultoria Individualizada</li>
                 </ul>
-                <a href="https://pag.ae/81kU9vx2N" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER ASPIRANTE</a>
+                <a href="https://pag.ae/81kU9vx2N" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px; margin-top: 10px;">VOU SER ASPIRANTE</a>
             </div>
 
             <div class="card featured">
@@ -214,7 +244,7 @@
                     <li>03 Redações Corrigidas</li>
                     <li>Grupo VIP WhatsApp</li>
                 </ul>
-                <a href="https://pag.ae/81kUaokX7" target="_blank" class="cta-gold" style="font-size: 1.1em; padding: 12px;">VOU SER TENENTE</a>
+                <a href="https://pag.ae/81kUaokX7" target="_blank" class="cta-gold" style="font-size: 1.1em; padding: 12px; margin-top: 10px;">VOU SER TENENTE</a>
             </div>
 
             <div class="card">
@@ -223,9 +253,10 @@
                 <ul>
                     <li>Tudo do Plano Tenente</li>
                     <li>Calls Quinzenais</li>
-                    <li>Código Estrela (Lei Seca com Jurisprudência)</li>
+                    <li>Código Estrela (Lei Seca)</li>
+                    <li>Suporte Prioritário</li>
                 </ul>
-                <a href="https://pag.ae/81kUc4Hjt" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px;">VOU SER COMANDANTE</a>
+                <a href="https://pag.ae/81kUc4Hjt" target="_blank" class="cta-gold" style="font-size: 1em; padding: 12px; margin-top: 10px;">VOU SER COMANDANTE</a>
             </div>
 
         </div>
@@ -234,24 +265,21 @@
 
 <section class="faq-section">
     <div class="container faq-container">
-        <h2 style="text-align: center; color: var(--gold-bright); margin-bottom: 40px;">PERGUNTAS FREQUENTES</h2>
+        <h2 style="text-align: center; color: var(--gold-bright); margin-bottom: 40px; font-weight: 900;">DÚVIDAS FREQUENTES</h2>
         <div class="faq-item">
             <span class="faq-question">Como recebo o acesso?</span>
-            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com as instruções para iniciar sua Operação Estrela.</p>
-        </div>
-        <div class="faq-item">
-            <span class="faq-question">As consultorias são em grupo?</span>
-            <p class="faq-answer">Não. As consultorias dos planos Aspirante e Tenente são individuais para tratar da SUA evolução.</p>
+            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com as instruções.</p>
         </div>
         <div class="faq-item">
             <span class="faq-question">Tenho garantia?</span>
-            <p class="faq-answer">Sim, você tem 7 dias de garantia incondicional para testar a metodologia.</p>
+            <p class="faq-answer">Sim, 7 dias de garantia incondicional.</p>
         </div>
     </div>
 </section>
 
 <footer>
     <p>Operação Estrela &copy; 2025 | Mentoria Oficial PMDF</p>
+    <p style="font-size: 0.7em; margin-top: 10px; opacity: 0.5;">Este site não faz parte do Facebook ou do Google. Além disso, este site não é endossado pelo Facebook ou Google de qualquer maneira.</p>
 </footer>
 
 </body>
