@@ -31,7 +31,7 @@
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
 
-        /* --- HERO SECTION (DESIGN PREMIUM) --- */
+        /* --- HERO SECTION --- */
         header { 
             position: relative;
             background: radial-gradient(circle at top, var(--deep-blue) 0%, var(--dark-navy) 100%);
@@ -41,7 +41,6 @@
             border-bottom: 2px solid var(--gold-dark);
         }
 
-        /* Textura Abstrata (Grade de Pontos) */
         header::before {
             content: "";
             position: absolute;
@@ -67,7 +66,6 @@
             text-transform: uppercase; 
             font-weight: 900;
             line-height: 1.1;
-            color: var(--white);
             text-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
@@ -80,24 +78,21 @@
             margin: 0 auto 45px;
         }
 
-        /* Vídeo Centralizado */
         .main-video-container { 
             position: relative;
             background: #000; 
-            width: 100%; 
             max-width: 850px;
             margin: 0 auto; 
             border: 3px solid var(--gold-dark);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(184, 134, 11, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
             border-radius: 8px;
             z-index: 2;
-            line-height: 0;
             overflow: hidden;
+            line-height: 0;
         }
 
-        video { width: 100%; height: auto; display: block; }
+        video { width: 100%; height: auto; }
 
-        /* Botão CTA Principal */
         .cta-gold { 
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-dark));
             color: #000 !important; 
@@ -109,18 +104,13 @@
             display: inline-block; 
             margin-top: 50px; 
             text-transform: uppercase;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
-            cursor: pointer;
+            transition: 0.3s;
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
-        .cta-gold:hover { 
-            transform: translateY(-5px) scale(1.02); 
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); 
-        }
+        .cta-gold:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); }
 
-        /* --- SEÇÃO DE RESULTADOS --- */
+        /* --- RESULTADOS --- */
         .resultados { background: var(--gray-bg); padding: 80px 20px; text-align: center; }
         .grid-resultados { 
             display: grid; 
@@ -128,40 +118,42 @@
             gap: 25px; 
             margin-top: 45px;
         }
-
-        .img-resultado { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 10px; 
-            border: 2px solid var(--gold-dark);
-            transition: 0.3s;
-        }
+        .img-resultado { width: 100%; border-radius: 10px; border: 2px solid var(--gold-dark); transition: 0.3s; }
         .img-resultado:hover { transform: scale(1.03); }
 
-        /* --- SEÇÃO DE PREÇOS --- */
-        .pricing-section { padding: 80px 20px; background: var(--white); color: #333; }
-        .pricing-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px;}
-        
-        .card { 
-            background: var(--white); 
-            border: 1px solid #ddd; 
-            border-radius: 12px; 
-            padding: 45px 30px; 
-            width: 30%; 
-            min-width: 310px; 
-            text-align: center; 
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s;
+        /* --- QUEM SOMOS --- */
+        .quem-somos { padding: 100px 20px; background: linear-gradient(to right, var(--dark-navy), var(--deep-blue)); border-bottom: 1px solid rgba(184, 134, 11, 0.2); }
+        .quem-somos-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+        .quem-somos-img img { 
+            width: 100%; 
+            border-radius: 15px; 
+            border-bottom: 5px solid var(--gold-dark);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
+        .quem-somos-texto h2 { font-size: 2.5em; font-weight: 900; margin: 10px 0; color: var(--white); }
+        .quem-somos-texto p { 
+            color: #bdc3c7; 
+            font-size: 1.05em; 
+            margin-bottom: 18px; 
+            text-align: justify; 
+        }
+        .highlight-text { color: var(--gold-bright); font-weight: bold; }
+        .mentoria-stats { display: flex; gap: 30px; margin-top: 35px; }
+        .stat-item { border-left: 3px solid var(--gold-bright); padding-left: 15px; }
+        .stat-item strong { display: block; font-size: 1.8em; color: var(--white); }
+        .stat-item span { color: var(--gold-bright); font-size: 0.75em; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 
+        /* --- PREÇOS --- */
+        .pricing-section { padding: 80px 20px; background: var(--white); color: #333; }
+        .pricing-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+        .card { 
+            background: var(--white); border: 1px solid #ddd; border-radius: 12px; 
+            padding: 45px 30px; width: 30%; min-width: 310px; text-align: center; 
+            position: relative; display: flex; flex-direction: column; transition: 0.3s;
+        }
         .card.featured { border: 4px solid var(--gold-dark); transform: scale(1.05); z-index: 1; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         .badge { background: var(--gold-dark); color: white; padding: 7px 20px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-weight: bold; border-radius: 4px; font-size: 0.85em; }
-
         .price { font-size: 3.2em; font-weight: 900; margin: 20px 0; color: #000; }
-        .price span { font-size: 0.4em; color: #666; font-weight: 400; }
-
         ul { text-align: left; padding: 0; list-style: none; margin-bottom: 35px; flex-grow: 1; }
         li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 1em; }
         li::before { content: "✔ "; color: var(--gold-dark); font-weight: bold; margin-right: 5px; }
@@ -171,25 +163,26 @@
         .faq-container { max-width: 800px; margin: auto; }
         .faq-item { margin-bottom: 25px; border-bottom: 1px solid rgba(184, 134, 11, 0.2); padding-bottom: 20px; }
         .faq-question { font-weight: bold; color: var(--gold-bright); font-size: 1.15em; display: block; margin-bottom: 8px; }
-        .faq-answer { color: #bdc3c7; font-size: 1em; margin: 0; }
+        .faq-answer { color: #bdc3c7; }
 
-        /* --- INSTAGRAM FLUTUANTE --- */
+        /* --- INSTAGRAM --- */
         .insta-float {
             position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px;
             background: var(--insta-gradient); color: #FFF; border-radius: 50px;
             text-align: center; font-size: 38px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); z-index: 100;
-            display: flex; align-items: center; justify-content: center; text-decoration: none;
-            transition: 0.4s;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.4s;
         }
-        .insta-float:hover { transform: scale(1.15) rotate(10deg); box-shadow: 0 8px 25px rgba(220, 39, 67, 0.5); }
+        .insta-float:hover { transform: scale(1.15) rotate(10deg); }
 
         footer { text-align: center; padding: 60px 20px; background: #000; color: #666; font-size: 0.9em; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.3em; }
+            .quem-somos-grid { grid-template-columns: 1fr; text-align: center; }
+            .quem-somos-texto p { text-align: center; }
+            .mentoria-stats { justify-content: center; }
             .card { width: 100%; margin-bottom: 35px; }
             .card.featured { transform: scale(1); }
-            .insta-float { width: 55px; height: 55px; bottom: 25px; right: 25px; font-size: 32px; }
         }
     </style>
 </head>
@@ -227,13 +220,49 @@
     </div>
 </section>
 
+<section class="quem-somos">
+    <div class="container">
+        <div class="quem-somos-grid">
+            <div class="quem-somos-img">
+                <img src="mentor-lucas.jpeg" alt="Mentor Lucas David">
+            </div>
+            <div class="quem-somos-texto">
+                <span class="mentoria-nome" style="color: var(--gold-bright); letter-spacing: 2px;">O Mentor</span>
+                <h2>LUCAS DAVID BEZERRA</h2>
+                <p>
+                    Ex-Policial Militar do Estado de Goiás, aprovado e nomeado na Polícia Civil do Estado de Goiás e, atualmente, <span class="highlight-text">Policial Militar do Distrito Federal</span>.
+                </p>
+                <p>
+                    Atuo como professor e mentor de candidatos às principais carreiras policiais do país. A partir da minha experiência prática nas corporações, do domínio dos editais e da leitura estratégica das bancas, desenvolvi uma metodologia própria que já levou <span class="highlight-text">mais de 300 alunos à aprovação</span>.
+                </p>
+                <p>
+                    Minha mentoria é voltada para quem busca mais do que conteúdo: busca direção clara, estudo inteligente e preparação de alto nível, unindo disciplina, constância e estratégia.
+                </p>
+                <p style="font-weight: 700; border-left: 3px solid var(--gold-bright); padding-left: 15px; font-style: italic;">
+                    Se você procura uma mentoria genérica, este não é o lugar. Aqui, formamos candidatos preparados para competir em alto nível.
+                </p>
+                
+                <div class="mentoria-stats">
+                    <div class="stat-item">
+                        <strong>+300</strong>
+                        <span>Alunos Aprovados</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>PMDF</strong>
+                        <span>Aprovado e Nomeado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="precos" class="pricing-section">
     <div class="container">
         <h2 style="text-align: center; color: var(--dark-navy); margin-bottom: 10px; font-weight: 900; text-transform: uppercase; font-size: 2.2em;">Escolha Sua Patente</h2>
         <p style="text-align: center; color: #777; margin-bottom: 50px;">Selecione o nível de acompanhamento ideal para você.</p>
         
         <div class="pricing-grid">
-            
             <div class="card">
                 <h3>Aspirante</h3>
                 <div class="price">R$ 497</div>
@@ -273,7 +302,6 @@
                 </ul>
                 <a href="https://pag.ae/81kUc4Hjt" target="_blank" class="cta-gold" style="font-size: 1em; padding: 15px; margin-top: 10px;">VOU SER COMANDANTE</a>
             </div>
-
         </div>
     </div>
 </section>
@@ -281,34 +309,24 @@
 <section class="faq-section">
     <div class="container faq-container">
         <h2 style="text-align: center; color: var(--gold-bright); margin-bottom: 50px; font-weight: 900; font-size: 2em;">PERGUNTAS FREQUENTES</h2>
-        
         <div class="faq-item">
             <span class="faq-question">Como recebo o acesso aos materiais?</span>
-            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá um e-mail com os links de acesso e o contato para agendar sua consultoria.</p>
+            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá o acesso aos materiais e o contato para agendar sua consultoria.</p>
         </div>
-        
         <div class="faq-item">
             <span class="faq-question">As consultorias são ao vivo?</span>
             <p class="faq-answer">Sim! São encontros individuais via vídeo chamada para analisarmos sua rotina e seu desempenho real.</p>
         </div>
-
-        <div class="faq-item">
-            <span class="faq-question">Posso trocar de plano depois?</span>
-            <p class="faq-answer">Sim, você pode realizar o upgrade para um plano superior pagando apenas a diferença, desde que ainda haja vagas disponíveis.</p>
-        </div>
-
         <div class="faq-item">
             <span class="faq-question">Tenho garantia?</span>
-            <p class="faq-answer">Com certeza. Você tem 7 dias para testar a mentoria. Se não se adaptar, devolvemos 100% do seu investimento.</p>
+            <p class="faq-answer">Sim. Você tem 7 dias para testar a mentoria. Se não se adaptar, devolvemos 100% do seu investimento.</p>
         </div>
     </div>
 </section>
 
 <footer>
     <p>Operação Estrela &copy; 2025 | Mentoria Oficial PMDF</p>
-    <p style="font-size: 0.75em; margin-top: 15px; opacity: 0.4; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Este site não é afiliado ao Facebook ou a qualquer entidade governamental. Os resultados podem variar de acordo com a dedicação individual.
-    </p>
+    <p style="font-size: 0.75em; margin-top: 15px; opacity: 0.4;">Este site não é afiliado ao Facebook ou a qualquer entidade governamental.</p>
 </footer>
 
 </body>
