@@ -94,7 +94,7 @@
             line-height: 0;
         }
 
-        video { width: 100%; height: auto; display: block; }
+        video { width: 100%; height: auto; display: block; outline: none; }
 
         .cta-gold { 
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-dark));
@@ -110,6 +110,7 @@
             transition: 0.3s;
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
             cursor: pointer;
+            border: none;
         }
 
         .cta-gold:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); }
@@ -264,8 +265,6 @@
 <section id="precos" class="pricing-section">
     <div class="container">
         <h2 style="text-align: center; color: var(--dark-navy); font-weight: 900; text-transform: uppercase; font-size: 2.2em;">Escolha Sua Patente</h2>
-        <p style="text-align: center; color: #777; margin-bottom: 50px;">Selecione o nível de acompanhamento ideal para você.</p>
-        
         <div class="pricing-grid">
             <div class="card">
                 <h3>Aspirante</h3>
@@ -310,23 +309,34 @@
     </div>
 </section>
 
-<section class="faq-section">
-    <div class="container faq-container">
-        <h2 style="text-align: center; color: var(--gold-bright); margin-bottom: 50px; font-weight: 900; font-size: 2em;">PERGUNTAS FREQUENTES</h2>
-        <div class="faq-item">
-            <span class="faq-question">Como recebo o acesso aos materiais?</span>
-            <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá o acesso aos materiais e o contato para agendar sua consultoria.</p>
-        </div>
-        <div class="faq-item">
-            <span class="faq-question">Tenho garantia?</span>
-            <p class="faq-answer">Sim. Você tem 7 dias para testar a mentoria. Se não se adaptar, devolvemos 100% do seu investimento.</p>
-        </div>
-    </div>
-</section>
-
 <footer>
     <p>Operação Estrela &copy; 2025 | Mentoria Oficial PMDF</p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('video-vendas');
+        
+        // Garante que o vídeo está mudo (essencial para autoplay)
+        video.muted = true;
+        
+        // Tenta dar o play assim que possível
+        const playVideo = () => {
+            video.play().catch(error => {
+                console.log("Autoplay bloqueado. Aguardando interação.");
+            });
+        };
+
+        // Tenta rodar em diferentes estágios de carregamento
+        video.addEventListener('canplay', playVideo);
+        playVideo();
+
+        // Se o usuário clicar em qualquer lugar da página, o vídeo roda (caso o navegador tenha bloqueado)
+        document.body.addEventListener('click', function() {
+            video.play();
+        }, { once: true });
+    });
+</script>
 
 </body>
 </html>
