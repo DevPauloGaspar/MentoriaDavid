@@ -94,7 +94,7 @@
             line-height: 0;
         }
 
-        video { width: 100%; height: auto; }
+        video { width: 100%; height: auto; display: block; }
 
         .cta-gold { 
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-dark));
@@ -109,6 +109,7 @@
             text-transform: uppercase;
             transition: 0.3s;
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            cursor: pointer;
         }
 
         .cta-gold:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); }
@@ -124,7 +125,7 @@
         .img-resultado { width: 100%; border-radius: 10px; border: 2px solid var(--gold-dark); transition: 0.3s; }
         .img-resultado:hover { transform: scale(1.03); }
 
-        /* --- QUEM SOMOS (JUSTIFICADO) --- */
+        /* --- QUEM SOMOS --- */
         .quem-somos { padding: 100px 20px; background: linear-gradient(to right, var(--dark-navy), var(--deep-blue)); border-bottom: 1px solid rgba(184, 134, 11, 0.2); }
         .quem-somos-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
         .quem-somos-img img { 
@@ -199,10 +200,10 @@
     <div class="container">
         <span class="mentoria-nome">Operação Estrela</span>
         <h1>O Melhor Caminho para ser <span>Oficial da PMDF</span></h1>
-        <p>Acesse a estratégia validada para vencer a concorrência e conquistar a sua farda com um acompanhamento verdadeiramente individualizado.</p>
+        <p>Acesse a estratégia validada para vencer a concorrência e conquistar a sua farda.</p>
         
         <div class="main-video-container">
-            <video controls>
+            <video id="video-vendas" autoplay muted loop playsinline controls poster="capa-video.jpg">
                 <source src="video-vendas.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
@@ -214,7 +215,7 @@
 
 <section class="resultados">
     <div class="container">
-        <h2 style="color: var(--gold-bright); text-transform: uppercase; font-weight: 900; letter-spacing: 2px; font-size: 2em;">Resultados de Quem Confiou</h2>
+        <h2 style="color: var(--gold-bright); text-transform: uppercase; font-weight: 900; font-size: 2em;">Resultados de Quem Confiou</h2>
         <div class="grid-resultados">
             <img src="resultado1.jpeg" alt="Aprovação 1" class="img-resultado">
             <img src="resultado2.jpeg" alt="Aprovação 2" class="img-resultado">
@@ -233,7 +234,7 @@
                 <span class="mentoria-nome" style="color: var(--gold-bright); letter-spacing: 2px;">O Mentor</span>
                 <h2>LUCAS DAVID BEZERRA</h2>
                 <p>
-                    Ex-Policial Militar do Estado de Goiás, aprovado e nomeado na Polícia Civil do Estado de Goiás e, atualmente, <span class="highlight-text">Policial Militar do Distrito Federal</span>.
+                    Sou Lucas David Bezerra, ex-Policial Militar do Estado de Goiás, aprovado e nomeado na Polícia Civil do Estado de Goiás e, atualmente, <span class="highlight-text">Policial Militar do Distrito Federal</span>.
                 </p>
                 <p>
                     Atuo como professor e mentor de candidatos às principais carreiras policiais do país. A partir da minha experiência prática nas corporações, do domínio dos editais e da leitura estratégica das bancas, desenvolvi uma metodologia própria que já levou <span class="highlight-text">mais de 300 alunos à aprovação</span>.
@@ -262,7 +263,7 @@
 
 <section id="precos" class="pricing-section">
     <div class="container">
-        <h2 style="text-align: center; color: var(--dark-navy); margin-bottom: 10px; font-weight: 900; text-transform: uppercase; font-size: 2.2em;">Escolha Sua Patente</h2>
+        <h2 style="text-align: center; color: var(--dark-navy); font-weight: 900; text-transform: uppercase; font-size: 2.2em;">Escolha Sua Patente</h2>
         <p style="text-align: center; color: #777; margin-bottom: 50px;">Selecione o nível de acompanhamento ideal para você.</p>
         
         <div class="pricing-grid">
@@ -317,10 +318,6 @@
             <p class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá o acesso aos materiais e o contato para agendar sua consultoria.</p>
         </div>
         <div class="faq-item">
-            <span class="faq-question">As consultorias são ao vivo?</span>
-            <p class="faq-answer">Sim! São encontros individuais via vídeo chamada para analisarmos sua rotina e seu desempenho real.</p>
-        </div>
-        <div class="faq-item">
             <span class="faq-question">Tenho garantia?</span>
             <p class="faq-answer">Sim. Você tem 7 dias para testar a mentoria. Se não se adaptar, devolvemos 100% do seu investimento.</p>
         </div>
@@ -329,7 +326,6 @@
 
 <footer>
     <p>Operação Estrela &copy; 2025 | Mentoria Oficial PMDF</p>
-    <p style="font-size: 0.75em; margin-top: 15px; opacity: 0.4;">Este site não é afiliado ao Facebook ou a qualquer entidade governamental.</p>
 </footer>
 
 </body>
